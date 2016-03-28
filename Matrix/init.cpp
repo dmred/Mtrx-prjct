@@ -21,9 +21,9 @@ SCENARIO("Matrix init", "[init]") {
 
 SCENARIO("Matrix: operator +", "[addition]") {
 	matrix<int> A, B, expected;
-	A.readFromFile("A2x2.txt");
-	B.readFromFile("B2x2.txt");
-	expected.readFromFile("A+B.txt");
+	A.get_from_file("A2x2.txt");
+	B.get_from_file("B2x2.txt");
+	expected.get_from_file("A+B.txt");
 
 	matrix<int> result = A + B;
 	REQUIRE(result == expected);
@@ -32,8 +32,8 @@ SCENARIO("Matrix: operator +", "[addition]") {
 
 SCENARIO("Matrix: operator *(matix, number)", "[multiplication]") {
 	matrix<int> A, expected;
-	A.readFromFile("A2x2.txt");
-	expected.readFromFile("A2x2mult2.txt");
+	A.get_from_file("A2x2.txt");
+	expected.get_from_file("A2x2mult2.txt");
 
 	matrix<int> result = A * 2;
 	REQUIRE(result == expected);
@@ -41,9 +41,9 @@ SCENARIO("Matrix: operator *(matix, number)", "[multiplication]") {
 
 SCENARIO("Matrix: operator *(matix, matrix)", "[multiplication]") {
 	matrix<int> A, B, expected;
-	A.readFromFile("A2x2.txt");
-	B.readFromFile("B2x2.txt");
-	expected.readFromFile("AxB.txt");
+	A.get_from_file("A2x2.txt");
+	B.get_from_file("B2x2.txt");
+	expected.get_from_file("AxB.txt");
 
 	matrix<int> result = A * B;
 	REQUIRE(result == expected);
@@ -52,16 +52,16 @@ SCENARIO("Matrix: operator *(matix, matrix)", "[multiplication]") {
 SCENARIO("Matrix: operator [](i)", "[get row]") {
 	matrix<int> A;
 	int* a = new int[2]; a[0] = 1; a[1] = 2;
-	A.readFromFile("A2x2.txt");
+	A.get_from_file("A2x2.txt");
 
-	bool flag = true;
+	bool f = true;
 	int* res = A[0];
 	for (int j = 0; j < 2; j++) {
 		if (a[j] != res[j]) {
-			flag = false;
+			f = false;
 		}
 	}
-	REQUIRE(flag);
+	REQUIRE(f);
 }
 
 
