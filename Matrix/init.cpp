@@ -10,10 +10,10 @@ SCENARIO("Matrix init", "[init]") {
 			matrix<int> m(rows, columns);
 			matrix<int> a;
 			THEN("The number of rows and columns must be preserved") {
-				REQUIRE(m.rowsNumber() == rows);
-				REQUIRE(m.columnsNumber() == columns);
-				REQUIRE(a.rowsNumber() == 0);
-				REQUIRE(a.columnsNumber() == 0);
+				REQUIRE(m.get_num_rows() == rows);
+				REQUIRE(m.get_num_cols() == columns);
+				REQUIRE(a.get_num_rows() == 0);
+				REQUIRE(a.get_num_cols() == 0);
 			}
 		}
 	}
