@@ -1,4 +1,6 @@
 #pragma once
+#ifndef MATR_H
+#define NATR_H
 #include "stdafx.h"
 #include <iostream>
 #include <fstream>
@@ -31,7 +33,7 @@ public:
 	int get(int rows, int columns) const;
 	void set(int row, int columns, int set);
 
-
+ptivate:
 	int rows;
 	int columns;
 	int **_matrix;
