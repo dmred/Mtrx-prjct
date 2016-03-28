@@ -8,7 +8,7 @@
 
 #include "Matrix.h"
 #include <stdio.h>
-#include <string>
+#include <string.h>
 #include <iostream>
 using namespace std;
 #include <fstream>
