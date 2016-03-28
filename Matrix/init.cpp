@@ -7,8 +7,8 @@ SCENARIO("Matrix init", "[init]") {
 		auto rows = 3;
 		auto columns = 3;
 		WHEN("Create instansce of Matrix") {
-			matrix<int> m(rows, columns);
-			matrix<int> a;
+			matrix m(rows, columns);
+			matrix a;
 			THEN("The number of rows and columns must be preserved") {
 				REQUIRE(m.get_num_rows() == rows);
 				REQUIRE(m.get_num_cols() == columns);
@@ -20,27 +20,27 @@ SCENARIO("Matrix init", "[init]") {
 }
 
 SCENARIO("Matrix: operator +", "[addition]") {
-	matrix<int> A, B, expected;
+	matrix A, B, expected;
 	A.get_from_file("A2x2.txt");
 	B.get_from_file("B2x2.txt");
 	expected.get_from_file("A+B.txt");
 
-	matrix<int> result = A + B;
+	matrix result = A + B;
 	REQUIRE(result == expected);
 }
 
 
 SCENARIO("Matrix: operator *(matix, number)", "[multiplication]") {
-	matrix<int> A, expected;
+	matrix A, expected;
 	A.get_from_file("A2x2.txt");
 	expected.get_from_file("A2x2mult2.txt");
 
-	matrix<int> result = A * 2;
+	matrix result = A * 2;
 	REQUIRE(result == expected);
 }
 
 SCENARIO("Matrix: operator *(matix, matrix)", "[multiplication]") {
-	matrix<int> A, B, expected;
+	matrix A, B, expected;
 	A.get_from_file("A2x2.txt");
 	B.get_from_file("B2x2.txt");
 	expected.get_from_file("AxB.txt");
@@ -50,7 +50,7 @@ SCENARIO("Matrix: operator *(matix, matrix)", "[multiplication]") {
 }
 
 SCENARIO("Matrix: operator [](i)", "[get row]") {
-	matrix<int> A;
+	matrix A;
 	int* a = new int[2]; a[0] = 1; a[1] = 2;
 	A.get_from_file("A2x2.txt");
 
@@ -66,13 +66,13 @@ SCENARIO("Matrix: operator [](i)", "[get row]") {
 
 
 SCENARIO("Matrix: get_num_rows()", "[rows number]") {
-	matrix<int> A(3, 3);
+	matrix A(3, 3);
 
 	REQUIRE(A.get_num_rows() == 3);
 }
 
 SCENARIO("Matrix: get_num_cols()", "[columns number]") {
-	matrix<int> A(3, 3);
+	matrix A(3, 3);
 
 	REQUIRE(A.get_num_cols() == 3);
 }
