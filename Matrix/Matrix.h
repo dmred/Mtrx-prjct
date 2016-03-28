@@ -33,7 +33,7 @@ public:
 	int get(int rows, int columns) const;
 	void set(int row, int columns, int set);
 
-ptivate:
+private:
 	int rows;
 	int columns;
 	int **_matrix;
