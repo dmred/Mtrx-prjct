@@ -1,6 +1,5 @@
 #pragma once
-#ifndef MATR_H
-#define NATR_H
+
 #include "stdafx.h"
 #include <iostream>
 #include <fstream>
@@ -42,5 +41,4 @@ private:
 
 #include "Matrix.cpp"
 
-#endif
 
