@@ -10,7 +10,6 @@
 #include <stdio.h>
 #include <string>
 #include <iostream>
-#include <iostream>
 using namespace std;
 #include <fstream>
 #include <stdio.h>
