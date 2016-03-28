@@ -2,8 +2,8 @@
 
 
 #include"stdafx.h"
-#include <iostream>
-using namespace std;
+
+
 #define N 3
 #define M 5
 int main()
